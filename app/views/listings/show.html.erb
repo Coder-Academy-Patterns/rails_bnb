@@ -47,12 +47,12 @@
 
 <p>
   <strong>Night fee cents:</strong>
-  <%= @listing.night_fee_cents %>
+  <%= format_cents @listing.night_fee_cents %>
 </p>
 
 <p>
   <strong>Cleaning fee cents:</strong>
-  <%= @listing.cleaning_fee_cents %>
+  <%= format_cents @listing.cleaning_fee_cents %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
