@@ -1,4 +1,5 @@
 class Listing < ApplicationRecord
+  belongs_to :host, class_name: 'User'
   validates :title, presence: true
   validates :street_address, presence: true
   validates :city, presence: true

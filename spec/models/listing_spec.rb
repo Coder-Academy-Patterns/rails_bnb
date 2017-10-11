@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Listing, type: :model do
+  let (:host) {
+    User.new(email: 'host@email.com', password: 'password', password_confirmation: 'password')
+  }
+
   it 'should allow valid attributes' do
-    listing = Listing.new title: 'White House', street_address: '1600 Pennsylvania Avenue NW', city: 'Washington, DC', country_code: 'us'
+    listing = Listing.new host: host, title: 'White House', street_address: '1600 Pennsylvania Avenue NW', city: 'Washington, DC', country_code: 'us'
     expect(listing).to be_valid
   end
 
@@ -19,6 +23,9 @@ RSpec.describe Listing, type: :model do
     expect(listing).to be_invalid
 
     listing = Listing.new title: 'White House', street_address: '1600 Pennsylvania Avenue NW', city: 'Washington, DC', country_code: 'zz'
+    expect(listing).to be_invalid
+
+    listing = Listing.new title: 'White House', street_address: '1600 Pennsylvania Avenue NW', city: 'Washington, DC', country_code: 'us'
     expect(listing).to be_invalid
   end
 end
