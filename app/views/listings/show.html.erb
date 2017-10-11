@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @listing.title %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @listing.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @listing.city %>
+</p>
+
+<p>
+  <strong>Country code:</strong>
+  <%= @listing.country_code %>
+</p>
+
+<p>
+  <strong>Bed count:</strong>
+  <%= @listing.bed_count %>
+</p>
+
+<p>
+  <strong>Bedroom count:</strong>
+  <%= @listing.bedroom_count %>
+</p>
+
+<p>
+  <strong>Bathroom count:</strong>
+  <%= @listing.bathroom_count %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<p>
+  <strong>Night fee cents:</strong>
+  <%= @listing.night_fee_cents %>
+</p>
+
+<p>
+  <strong>Cleaning fee cents:</strong>
+  <%= @listing.cleaning_fee_cents %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
