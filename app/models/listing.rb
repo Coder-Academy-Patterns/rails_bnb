@@ -3,7 +3,9 @@ class Listing < ApplicationRecord
   validates :street_address, presence: true
   validates :city, presence: true
   validates :country_code, presence: true
-  validates :country, presence: true
+  validates :country, presence: {
+    message: -> (listing, data) { "Invalid country code: #{listing.country_code}" }
+  }
 
   geocoded_by :full_address
   after_validation :geocode
