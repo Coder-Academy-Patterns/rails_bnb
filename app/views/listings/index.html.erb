@@ -22,7 +22,7 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.title %></td>
+        <td><%= link_to listing.title, listing %></td>
         <td><%= listing.street_address %></td>
         <td><%= listing.city %></td>
         <td><%= listing.country_code %></td>
@@ -32,9 +32,9 @@
         <td><%= listing.description %></td>
         <td><%= listing.night_fee_cents %></td>
         <td><%= listing.cleaning_fee_cents %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Edit', edit_listing_path(listing), class: 'btn btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
