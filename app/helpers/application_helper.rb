@@ -4,4 +4,9 @@ module ApplicationHelper
     money = Money.new(cents, 'AUD')
     money.format
   end
+
+  def format_cents_for_country(cents, country)
+    money = Money.new(cents, country.currency.iso_code)
+    money.format
+  end
 end
